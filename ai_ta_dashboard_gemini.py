@@ -45,7 +45,7 @@ if st.sidebar.button("Get Data"):
     stock_data = {}
     for ticker in tickers:
         # Download data from yfinance
-        data = yf.download(ticker, start=start_date, end=end_date)
+        data = yf.download(ticker, start=start_date, end=end_date, multi_level_index=False)
         if not data.empty:
             stock_data[ticker] = data
         else:
